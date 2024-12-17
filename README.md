@@ -1,1 +1,1 @@
-# Drag_and_drop_calendar_for_model_driven_app
+Drag and drop calendar for Model driven app
