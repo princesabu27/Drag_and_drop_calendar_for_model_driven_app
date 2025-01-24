@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and drop calendar for MarCom AI-Influencer By: Prince Sabu</title>
+
+
+
+    <!---------------------------------------------------------------------------------- jquery ui 1.8.11 css link -->
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.8.11/themes/smoothness/jquery-ui.css" />
+
+    <!-- <link rel="stylesheet" href="https://org35e260c1.crm.dynamics.com/WebResources/otel_jqueryui1811custom"> -->
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="https://omantelstorage.blob.core.windows.net/codes/jquery-ui-1.8.11.custom.css"> -->
+
+
+
+
+    <!-------------------------------------------------------------------------------------- jquery.weekcalander css link -->
+    <!-- <link rel="stylesheet" type="text/css"
+        href="https://omantelstorage.blob.core.windows.net/codes/jquery.weekcalendar.css"> -->
+    <!-- <link rel="stylesheet" href="lib/jquery.weekcalander.css" /> -->
+
+    <link rel="stylesheet" href="https://org35e260c1.crm.dynamics.com/WebResources/otel_jqueryweekcalander">
+
+
+
+    <!------------------------------------------------------------------------------------------------------------ My Custom css link -->
+    <!-- <link rel="stylesheet" type="text/css" href="dragNdrop_calendar_style.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://omantelstorage.blob.core.windows.net/codes/dragNdrop_calendar_style.css" > -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://omantelstorage.blob.core.windows.net/codes/dragNdrop_calendar_style.css"> -->
+
+
+    <link rel="stylesheet" href="https://org35e260c1.crm.dynamics.com/WebResources/otel_dragNdrop_calendar_style">
+
+
+
+
+
+
+
+    <!----------------------------------------------------- lodash ---------------------->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <!-------------------------------------------------------------------------------------- JQuery CDN link -->
+
+
+
+    <!-- <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.4.min.js"></script> -->
+
+    <script type="text/javascript"
+        src="https://org35e260c1.crm.dynamics.com/WebResources/otel_jquery_1.4.4min.js"></script>
+
+    <!-- <script type="text.javascript" src="https://omantelstorage.blob.core.windows.net/codes/jquery-1.4.4.min.js"></script> -->
+
+
+
+
+
+    <!------------------------------------------------------------------------ link jquery UI 1.8.11 js link -->
+    <!-- <script src="https://code.jquery.com/ui/1.8.11/jquery-ui.min.js"
+        integrity="sha256-U+Mg4jKaeTIbzkpk6YGWzUyBahjLJJHW9gG1yynX87U=" crossorigin="anonymous"></script> -->
+
+
+
+    <!-- <script type="text/javascript" src="https://omantelstorage.blob.core.windows.net/codes/jquery-ui-1.8.11.custom.min.js"></script> -->
+
+
+    <script src="https://org35e260c1.crm.dynamics.com/WebResources/otel_jQuery_UI_1.8.11"></script>
+
+    <!-- Link date.js  --------------------------------------------------------------------------------------->
+    <!-- <script type="text/javascript" src="https://omantelstorage.blob.core.windows.net/codes/date.js"></script> -->
+    <!-- <script src="lib/date.js"></script> -->
+
+    <script src="https://org35e260c1.crm.dynamics.com/WebResources/otel_date_dragNdrop"></script>
+
+
+
+    <!-- <script type="text/javascript"
+        src="https://omantelstorage.blob.core.windows.net/codes/jquery.weekcalendar.js"></script> -->
+    <!-- <script src="lib/week.calander.js"></script> -->
+    <script src="https://org35e260c1.crm.dynamics.com/WebResources/otel_weekcalander_dragNdrop_calander"></script>
+
+
+
+
+
+
+    <!-----------------------------------------------------Link client global context  ------------------------>
+    <script src="ClientGlobalContext.js.aspx" type="text/javascript"></script>
+    <script src="https://content.powerapps.com/resource/app/731b0hvk2t96e/PCF/fela.js"></script>
+
+
+
+    <!---------------------------------------------------------------------------------------- Link controlling script -->
+    <!-- <script type="text/javascript" src="control.js"></script> -->
+    <!-- <script type="text/javascript" src="drag.js"></script> -->
+    <script src="https://org35e260c1.crm.dynamics.com/WebResources/otel_drag_Calander_script"></script>
+
+
+    <!-- <script src="drag1.js" type="text/javascript"></script> -->
+
+
+    <!-- <Script type="text/javascript" src="https://omantelstorage.blob.core.windows.net/codes/drag.js"></Script> -->
+
+    <!-- <script type="text/javascript" src="https://omantelstorage.blob.core.windows.net/codes/drag.js"></script> -->
+    <!-- <script type="text/javascript" src="https://omantelstorage.blob.core.windows.net/codes/control.js"></script> -->
+</head>
+
+<body>
+
+
+    <div class="master-continer">
+
+
+        <!-- Left container -->
+        <div class="left-container">
+            <div class="scrollable-image-container" id="image-gallery">
+                <!-- Web API fetch Images go here --->
+
+
+
+            </div>
+        </div>
+
+        <!-- Right container -->
+        <div class="right-container">
+            <div class="ribbon"> 
+            <div class="filter">
+                        <label for="options">Content Filter:</label>
+                        <select id="options" name="options" class="filter-options">
+                        <option value="option1">All</option>
+                        <option value="option2">Model images</option>
+                        <option value="option3">Trends</option>
+                        <option value="option4">Posters & Images</option>
+                        </select>
+                    <button id="refresh-all" class="refreshAll">Refresh</button>
+                </div>
+                    
+                    
+                    
+                    
+                        <div class="tittle-container">
+                            <h5>Image Scheduler</h5>
+                         </div>
+
+<button id="update-data" class="schedule-button">Schedule Posts</button>
+                    
+            </div>
+            <div class="calander-jquery-ui" id="calendar"></div>
+        </div>
+    </div>
+
+    <div class="responsive-messsge">
+        <h2>Scheduler is not supported in your device</h2>
+        <h4>Switch to a desktop to schedule post</h4>
+    </div>
+
+</body>
+
+</html>
